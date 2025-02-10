@@ -68,3 +68,18 @@ public class CountKeywords {
         return count;
     }
 }
+
+
+public class welcome {
+    public static void main(String[]args){
+        System.out.println("Welcome to Java!");
+    }
+}
+
+PS C:\Users\noorr> cd C:\book\
+PS C:\book> javac Welcome.java
+PS C:\book> javac welcome.java
+PS C:\book> java CountKeywords Welcome.java
+The number of keywords in Welcome.java is 5
+
+
