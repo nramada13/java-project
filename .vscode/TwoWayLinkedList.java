@@ -178,3 +178,16 @@ public class TwoWayLinkedList<E> {
         }
     }
 }
+
+C:\Users\noorr>cd C:\book\
+
+C:\Book> javac TwoWayLinkedList.java
+
+C:\Book> java TwoWayLinkedList
+Original List:
+1 2 3 4 5
+
+Using ListIterator:
+1 2 3 4 5
+Reversing Using ListIterator:
+5 4 3 2 1
