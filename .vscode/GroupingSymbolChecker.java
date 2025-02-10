@@ -56,3 +56,17 @@ public class GroupingSymbolChecker {
                (open == '[' && close == ']');
     }
 }
+
+public class welcome {
+    public static void main(String[]args){
+        System.out.println("Welcome to Java!");
+    }
+}
+
+
+
+
+C:\Book>javac Welcome.java
+
+C:\Book>java GroupingSymbolChecker Welcome.java
+Correct grouping pairs
