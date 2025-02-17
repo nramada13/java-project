@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-
+//User class
 class User {
     private String name;
     private int age;
@@ -87,6 +87,45 @@ class User {
 
     public double calculateBMI() {
         return weight / (height * height);
+    }
+}
+
+import java.time.LocalDate;
+//Workout class
+class Workout {
+    private String workoutType;
+    private int duration;
+    int caloriesBurned;
+    private LocalDate dateLogged;
+
+    public Workout(String workoutType, int duration, int caloriesBurned, LocalDate dateLogged) {
+        this.workoutType = workoutType;
+        this.duration = duration;
+        this.caloriesBurned = caloriesBurned;
+        this.dateLogged = dateLogged;
+    }
+
+    public String toString() {
+        return "Workout: " + workoutType + ", Duration: " + duration + " minutes, Calories Burned: " + caloriesBurned + ", Date: " + dateLogged;
+    }
+}
+
+import java.util.List;
+//Statistics class
+class Statistics {
+    public static void generateReport(List<Workout> workouts) {
+        System.out.println("Workout Report:");
+        for (Workout workout : workouts) {
+            System.out.println(workout);
+        }
+    }
+
+    public static void trackProgress(List<Workout> workouts) {
+        int totalCalories = 0;
+        for (Workout workout : workouts) {
+            totalCalories += workout.caloriesBurned;
+        }
+        System.out.println("Total Calories Burned: " + totalCalories);
     }
 }
 
