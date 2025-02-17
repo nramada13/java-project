@@ -51,3 +51,4 @@ public class GridPaneImage extends Application {
         launch(args);
     }
 }
+
