@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.Random" %>
+<html>
+<head>
+    <title>Addition Quiz</title>
+</head>
+<body>
+    <h2>Simple Addition Quiz</h2>
+    <form action="AdditionQuiz.jsp" method="post">
+        <%
+            Random rand = new Random();
+            int numQuestions = 5;
+            for (int i = 0; i < numQuestions; i++) {
+                int num1 = rand.nextInt(10) + 1;
+                int num2 = rand.nextInt(10) + 1;
+                out.println("<p>" + num1 + " + " + num2 + " = ");
+                out.println("<input type='hidden' name='answer" + i + "' value='" + (num1 + num2) + "'>");
+                out.println("<input type='text' name='userAnswer" + i + "'></p>");
+            }
+        %>
+        <input type="submit" value="Submit">
+    </form>
+
+    <%
+        if (request.getMethod().equals("POST")) {
+            int correct = 0;
+            for (int i = 0; i < numQuestions; i++) {
+                int correctAnswer = Integer.parseInt(request.getParameter("answer" + i));
+                String userResponse = request.getParameter("userAnswer" + i);
+                if (userResponse != null && !userResponse.isEmpty()) {
+                    int userAnswer = Integer.parseInt(userResponse);
+                    if (userAnswer == correctAnswer) {
+                        correct++;
+                    }
+                }
+            }
+            out.println("<h3>Your Score: " + correct + " out of " + numQuestions + "</h3>");
+        }
+    %>
+</body>
+</html>
